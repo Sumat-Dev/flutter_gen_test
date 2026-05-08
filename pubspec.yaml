@@ -1,0 +1,78 @@
+name: flutter_gen_test
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.0
+  lottie: ^3.0.0
+  rive: ^0.14.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_gen_runner: ^5.6.0
+  build_runner: ^2.4.9
+  lints: ^5.0.0
+
+flutter_gen:
+  output: lib/core/constants/
+  line_length: 80
+  integrations:
+    image: true
+    flutter_svg: true
+    rive: true
+    lottie: true
+
+  assets:
+    enabled: true
+    outputs:
+      class_name: AppAssets
+      package_parameter_enabled: false
+      style: dot-delimiter
+    exclude:
+      - assets/colors/*
+      - assets/fonts/*
+
+  fonts:
+    enabled: true
+    outputs:
+      class_name: AppFontFamily
+
+  colors:
+    enabled: true
+    inputs:
+      - assets/colors/colors.xml
+    outputs:
+      class_name: AppColors
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/colors/
+    - assets/fonts/
+    - assets/icons/
+    - assets/images/raster/
+    - assets/images/vector/
+    - assets/json/
+    - assets/lottie/
+    - assets/rive/
+
+  fonts:
+    - family: HelloTest1
+      fonts:
+        - asset: assets/fonts/font1-mock.ttf
+    - family: HelloTest2
+      fonts:
+        - asset: assets/fonts/font2-mock.ttf
